@@ -3,9 +3,9 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       - "build"
-      - "version=1.0"
       - "--tag=gcr.io/$PROJECT_ID/docker-compose:latest"
       - "--tag=gcr.io/$PROJECT_ID/docker-compose:1.0"
+      - "--file=Dockerfile"
       - "."
     id: "1.0"
 
