@@ -20,8 +20,8 @@ RUN apt-get -y update && \
     curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose && \
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose && \
-    groupadd docker && \
-    usermod -aG docker www-data
+    usermod -aG docker www-data && \
+    usermod -u 1000 www-data
 
 COPY notice.sh /usr/bin
 
