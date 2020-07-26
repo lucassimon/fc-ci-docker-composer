@@ -1,13 +1,13 @@
 steps:
   # Build all supported versions.
-  - name: "gcr.io/cloud-builders/docker"
+  - id: "1.0"
+    name: "gcr.io/cloud-builders/docker"
     args:
       - "build"
       - "--tag=gcr.io/$PROJECT_ID/docker-compose:latest"
       - "--tag=gcr.io/$PROJECT_ID/docker-compose:1.0"
       - "--file=Dockerfile"
       - "."
-    id: "1.0"
 
   - name: "gcr.io/$PROJECT_ID/docker-compose"
     args: ["version"]
